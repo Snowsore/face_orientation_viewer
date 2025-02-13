@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D 人脸方向查看器</title>
+    <style>
+        body { margin: 0; }
+        #container { width: 100vw; height: 100vh; }
+        #controls {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .control-group {
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+        input[type="range"] {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        input[type="number"] {
+            width: 60px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        .button-group button {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="controls">
+        <div class="control-group">
+            <label>Roll: </label>
+            <input type="range" id="roll-slider" min="-180" max="180" value="0" step="0.1" style="width: 200px;">
+            <input type="number" id="roll" value="0" step="0.1">
+        </div>
+        <div class="control-group">
+            <label>Pitch: </label>
+            <input type="range" id="pitch-slider" min="-180" max="180" value="0" step="0.1" style="width: 200px;">
+            <input type="number" id="pitch" value="0" step="0.1">
+        </div>
+        <div class="control-group">
+            <label>Yaw: </label>
+            <input type="range" id="yaw-slider" min="-180" max="180" value="0" step="0.1" style="width: 200px;">
+            <input type="number" id="yaw" value="0" step="0.1">
+        </div>
+        <div class="button-group">
+            <button id="resetButton">重置</button>
+            <button id="copyButton">复制参数</button>
+        </div>
+    </div>
+    <script src="js/three.min.js"></script>
+    <script src="js/TransformControls.js"></script>
+    <script src="js/FBXLoader.js"></script>
+    <script src="js/fflate.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html> 
